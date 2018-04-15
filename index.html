@@ -6,22 +6,109 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id='content'></div>
 
     <script type="text/babel">
-        var HelloWorld = React.createClass({
+        var CONTACTS = [
+        {    
+            id: 1,
+            name: 'Mike Kabanov',
+            phoneNumber: '+7952-428-1549',
+            image: 'img/face.jpg',
+            adress: 'Sochi',
+            mail: 'mail@mail.com'
+        },{
+            id: 2,
+            name: 'Bill Gates',
+            phoneNumber: '+7952-428-1549',
+            image: 'img/face.jpg',
+            adress: 'Sochi',
+            mail: 'mail@mail.com'
+        },{
+            id: 3,
+            name: 'Steve Jobs',
+            phoneNumber: '+7952-428-1549',
+            image: 'img/face.jpg',
+            adress: 'Sochi',
+            mail: 'mail@mail.com'
+        },{
+            id: 4,
+            name: 'Chubaka',
+            phoneNumber: '+7952-428-1549',
+            image: 'img/face.jpg',
+            adress: 'Sochi',
+            mail: 'mail@mail.com'
+        },{
+            id: 5,
+            name: 'Princess Leila',
+            phoneNumber: '+7952-428-1549',
+            image: 'img/face.jpg',
+            adress: 'Sochi',
+            mail: 'mail@mail.com'
+        }
+        ];
+        var Contact = React.createClass ({
             render: function() {
                 return (
-                    <h1> Hello world! </h1>
+                    <li className="contact">
+                        <img className="contact-image"src={this.props.image} widht="60px" height="60px" />
+                        <div className="contact-info">    
+                            <div className="contact-name">{this.props.name}</div>
+                            <div className="contact-number">{this.props.phoneNumber}</div>
+                            <div /*className="contact">*/>{this.props.adress}</div>
+                            <div /*className="contact"*/>{this.props.mail}</div>
+                        </div>
+                    </li>
+                );
+            }
+        });
+        var ContactsList = React.createClass({
+            getInitialState: function() {
+                return {
+                    displayedContacts: CONTACTS
+                };
+            },
+            handleSearch: function(event) {
+                var searchQuery = event.target.value.toLowerCase();
+                var displayedContacts = CONTACTS.filter(function (el) {
+                    var searchValue = el.name.toLowerCase();
+                    return searchValue.indexOf(searchQuery) !== -1;
+                    
+                });
+                this.setState( {
+                    displayedContacts: displayedContacts
+                });
+            },
+            render: function () {
+                return (
+                   <div className="contacts">
+                    <input type="text" className="search-field" onChange={this.handleSearch}/>
+                       <ul className="contacts-list">
+                            {
+                                this.state.displayedContacts.map(function(el){
+                                    return <Contact
+                                    key={el.id}
+                                    name={el.name}
+                                    phoneNumber={el.phoneNumber}
+                                    image={el.image}
+                                    adress={el.adress}
+                                    mail={el.mail}
+                                    />;
+                                })
+                            }
+                        </ul> 
+                   </div> 
                 );
             }
         });
         ReactDOM.render(
-            <HelloWorld />,
+            <ContactsList />,
             document.getElementById('content')
         );
+
     </script>
 </body>
 </html>

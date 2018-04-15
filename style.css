@@ -1,36 +1,39 @@
-body {
-  font-family: Georgia;
-  font-size: 16px;
-  margin: 0 auto;   /* center content */
-  max-width: 800px; /* limit width */
-  line-height: 1.5;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-/* BEGIN (write your solution here) */
-p {
-    margin-bottom: 12px;
-}
-h1 {
-    font-size:36px;
-   
-}
-h2 {
-    font-size: 32px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #d3d3d3;
-}
-h3 {
+.contacts {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .search-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .contacts-list {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .contact {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px dotted grey;
+  }
+  
+  .contact-image {
+      border-radius: 50%;
+      margin: 5px;
+  }
+  
+  .contact-name {
     font-size: 20px;
-    margin-bottom: 0px;
-}
-#header {
-   margin-bottom: 32px;
-   text-align: center; 
-}
-#footer {
-    margin-top: 64px;
-    text-align: center;
-}
-/* END */
+    font-weight: bold;
+  }
+  
+  .contact-number {
+    font-size: 18px;
+    color: grey;
+  }
