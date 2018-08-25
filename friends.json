@@ -7,28 +7,28 @@
       "photo": "../images/photo-user.png"
     },
     {
-      "first_name": "Иришка",
-      "last_name": "Кочерыжка",
+      "first_name": "Иван",
+      "last_name": "Петров",
       "photo": "../images/photo-user1.png"
     },
     {
-      "first_name": "Иришка",
-      "last_name": "Кочерыжка",
+      "first_name": "Василий",
+      "last_name": "Смирнов",
       "photo": "../images/photo-user2.png"
     },
     {
-      "first_name": "Иришка",
-      "last_name": "Кочерыжка",
+      "first_name": "Андрей",
+      "last_name": "Иванов",
       "photo": "../images/photo-user3.png"
     },
     {
-      "first_name": "Иришка",
-      "last_name": "Кочерыжка",
+      "first_name": "Наташа",
+      "last_name": "Веселова",
       "photo": "../images/photo-user4.png"
     },
     {
-      "first_name": "Иришка",
-      "last_name": "Кочерыжка",
+      "first_name": "Светлана",
+      "last_name": "Козлова",
       "photo": "../images/photo-user5.png"
     }
   ]
